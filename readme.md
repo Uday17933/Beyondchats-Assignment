@@ -39,3 +39,13 @@ cd backend
 npm install
 npm start
 ```
+## Live Links
+
+- Frontend (Vercel): https://beyondchats-assignment-black.vercel.app/
+- Backend (Render): https://beyondchats-assignment-iyj4.onrender.com
+
+## Deployment
+
+- Frontend deployed on Vercel
+- Backend deployed on Render
+- MongoDB hosted on MongoDB Atlas
