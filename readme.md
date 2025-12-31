@@ -69,3 +69,33 @@ npm run dev
 - Frontend deployed on Vercel
 - Backend deployed on Render
 - MongoDB hosted on MongoDB Atlas
+
+## Architecture / Data Flow Diagram
+
+User (Browser)
+|
+v
+Frontend (React - Vercel)
+|
+| HTTP Requests (Axios)
+v
+Backend API (Node.js + Express - Render)
+|
+| Mongoose ODM
+v
+MongoDB Atlas
+^
+|
+Phase 1 Script (Web Scraper - Cheerio/Axios)
+|
+v
+BeyondChats Blog Website
+
+Phase 2 Script (AI Rewrite Pipeline)
+|
+| Fetch Articles from Backend
+| Search & Scrape Reference Articles
+| Call OpenAI API
+| Save Updated Articles via Backend API
+v
+MongoDB Atlas
