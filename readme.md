@@ -10,35 +10,55 @@ The application scrapes the oldest blog articles from BeyondChats, stores them i
 
 ## Tech Stack
 
-- Backend: Node.js, Express, MongoDB
-- Frontend: React (Vite)
-- Scraping: Axios, Cheerio
-- AI: OpenAI API
-- Search: SerpAPI
+- Frontend: React (Vite), Axios
+- Backend: Node.js, Express.js
+- Database: MongoDB Atlas
+- Web Scraping: Axios, Cheerio, Puppeteer
+- AI Integration: OpenAI API
+- Deployment:
+  - Frontend: Vercel
+  - Backend: Render
 
 ---
 
-## Features
+## Architecture / Data Flow
 
-- Scrape 5 oldest BeyondChats blog articles
-- Store articles in MongoDB
-- CRUD APIs for articles
-- Fetch reference articles from the web
-- Rewrite articles using AI (with fallback handling)
-- Publish updated articles
-- Display original and updated articles in a responsive UI
+1. Scraper script fetches oldest articles from BeyondChats blog.
+2. Articles are stored in MongoDB via backend APIs.
+3. Phase 2 script:
+   - Fetches articles from backend API
+   - Searches reference articles on the web
+   - Scrapes reference content
+   - Uses OpenAI API to rewrite the article
+   - Stores updated article using backend API
+4. Frontend fetches articles from backend and displays:
+   - Original articles
+   - Updated (AI-generated) articles
 
 ---
 
 ## How to Run
 
-### Backend
+## Local Setup Instructions
 
-```bash
+### Backend Setup
+
+1. Navigate to backend folder:
+   
 cd backend
 npm install
+MONGO_URI=your_mongodb_uri
+OPENAI_API_KEY=your_openai_api_key
 npm start
-```
+
+### Frontend Setup
+
+1. Navigate to frontend folder:
+
+cd frontend
+npm install
+npm run dev
+
 ## Live Links
 
 - Frontend (Vercel): https://beyondchats-assignment-black.vercel.app/
